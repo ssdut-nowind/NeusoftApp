@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8"/>
     <title>Neusoft Application</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css/basic/bootstrap.css" />
-    <!-- APP Basic CSS -->
-    <link rel="stylesheet" type="text/css" href="css/basic/app.css" />
-    <!-- APP Theme CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <!-- 程序基础样式（建议没有主题样式的情况下基础样式也能正确布局） -->
+    <link rel="stylesheet" type="text/css" href="css/basic/app.css"/>
+    <!-- 主题相关样式 -->
     <link rel="stylesheet" type="text/css" href="css/theme/default/theme.css" data-theme="default"/>
 </head>
 
 <body>
-
+<!-- 程序框架 -->
+<div class="app-border">
+</div>
+<!-- requirejs程序入口 -->
 <script data-main="modules/main" src="libs/require.js"></script>
 </body>
 </html>
