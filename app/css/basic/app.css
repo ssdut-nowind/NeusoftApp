@@ -1,5 +1,11 @@
 /* Bootstrap CSS */
 @import url("bootstrap.css");
 
+/* Font Awesome CSS */
+@import url("font-awesome.css");
+
 /* Modules CSS */
+/* 主框架 */
 @import url("modules/main.css");
+/* 菜单 */
+@import url("modules/menu.css");
