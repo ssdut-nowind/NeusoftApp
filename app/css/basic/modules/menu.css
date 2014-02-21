@@ -10,6 +10,10 @@
     height: 75px;
 }
 
+.menu-item:active, .menu-item-active {
+    background-color: #444;
+}
+
 .menu-item-icon {
     display: inline-block;
     float: left;

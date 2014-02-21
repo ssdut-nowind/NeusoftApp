@@ -3,11 +3,12 @@ define(function(require, exports, module) {
     // 获取相关依赖
 
     var util = require('util');
+    var Base = require('base');
 
-    var popManager = {
+    var PopManager = Base.extend({
         // 每个模块带个模块ID
         module: 'popManager'
-    };
+    });
 
-    return popManager;
+    return PopManager;
 });

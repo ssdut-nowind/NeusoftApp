@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     "use strict";
-    var $ = require('zepto');
+//    var $ = require('zepto');
 
     var util = {
         // 服务器地址

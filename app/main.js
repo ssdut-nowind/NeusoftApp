@@ -3,7 +3,6 @@
  */
 requirejs.config({
     baseUrl: 'app/modules',
-    shim: {},
     paths: {
         // JS库，替代jquery（http://www.zeptojs.com/）
         'zepto': '../libs/zepto',
@@ -16,7 +15,22 @@ requirejs.config({
         // iScroll5页面滚动组件（http://cubiq.org/iscroll-5）
         'iscroll': '../libs/iscroll',
         // Bootstrap3样式组件
-        'bootstrap': '../libs/bootstrap'
+        'bootstrap': '../libs/bootstrap',
+        // MVVM组件（http://knockoutjs.com/）
+        'knockout': '../libs/knockout',
+        // 继承组件
+        'extend': '../libs/extend'
+    },
+    shim: {
+        // zepto非AMD规范
+        'zepto': {
+            deps: [],
+            exports: '$'
+        },
+        'extend' : {
+            deps: [],
+            exports: 'Class'
+        }
     }
 });
 
