@@ -10,5 +10,6 @@ define(function(require, exports, module) {
         module: 'popManager'
     });
 
-    return PopManager;
+    // 只要一个PopManager实例
+    return new PopManager();
 });

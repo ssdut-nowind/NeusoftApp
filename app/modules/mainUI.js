@@ -6,17 +6,16 @@ define(function (require, exports, module) {
 
     var mainUI = function () {
         // 菜单模块
-        var MenuManager = require('menuManager');
-        var menuManager = new MenuManager();
-        if (typeof(menuManager.initialize) == 'function')menuManager.initialize();
+        var menuManager = require('menuManager');
+        if (typeof(menuManager.initialize) == 'function') menuManager.initialize();
         // 主界面模块
-        var MainManager = require('mainManager');
-        var mainManager = new MainManager();
-        if (typeof(mainManager.initialize) == 'function')mainManager.initialize();
+        var mainManager = require('mainManager');
+        if (typeof(mainManager.initialize) == 'function') mainManager.initialize();
         // 弹出窗口模块
-        var PopManager = require('popManager');
-        var popManager = new PopManager();
-        if (typeof(popManager.initialize) == 'function')popManager.initialize();
+        var popManager = require('popManager');
+        if (typeof(popManager.initialize) == 'function') popManager.initialize();
+
+        mainManager.loadModule('home');
     };
 
     return mainUI;

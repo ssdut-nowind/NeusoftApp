@@ -23,7 +23,7 @@ define(function (require, exports, module) {
         }
     };
 
-    var menuManager = Base.extend({
+    var MenuManager = Base.extend({
         // 每个模块带个模块ID
         module: 'menuManager',
 
@@ -67,5 +67,6 @@ define(function (require, exports, module) {
         activeItem: ko.observable('')
     });
 
-    return menuManager;
+    // 只要一个MenuManager实例
+    return new MenuManager();
 });

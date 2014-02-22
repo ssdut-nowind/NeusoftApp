@@ -18,7 +18,7 @@ requirejs.config({
         'bootstrap': '../libs/bootstrap',
         // MVVM组件（http://knockoutjs.com/）
         'knockout': '../libs/knockout',
-        // 继承组件
+        // 继承组件（http://ejohn.org/blog/simple-javascript-inheritance/）
         'extend': '../libs/extend'
     },
     shim: {
