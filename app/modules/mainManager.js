@@ -29,7 +29,7 @@ define(function(require, exports, module) {
             if(this.windows[moduleId]){
                 // 模块已经存在，则激活
                 // 显示窗口并触发激活事件
-                var moduleView = $('#mainPageContainer').find('.main-page-header[data-module="' + moduleId + '"]');
+                var moduleView = $('#mainPageContainer').find('.main-page-border[data-module="' + moduleId + '"]');
                 moduleView.show();
                 var module = this.windows[moduleId];
                 if(module.active) module.active();
