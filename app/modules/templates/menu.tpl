@@ -1,7 +1,7 @@
 <!-- menu模块模板 -->
 <div class="menu-container">
     <ul class="menu" data-bind="foreach: menuItems">
-        <li class="menu-item" data-bind="click: showModule, css: {'menu-item-active': $parent.activeItem() == module()}">
+        <li class="menu-item" data-bind="click: $parent.showModule, css: {'menu-item-active': $parent.activeItem() == moduleId()}">
             <div class="menu-item-icon" data-bind="style: {backgroundColor: color}">
                 <i class="fa fa-2x" data-bind="css: icon"></i>
             </div>

@@ -6,6 +6,9 @@ define(function (require, exports, module) {
     var $ = require('zepto');
     var ko = require('knockout');
     var Base = require('base');
+    var mainManager = require('mainManager');
+    // MenuManager对象实例
+    var that = null;
 
     /**
      * 定义菜单项
@@ -17,10 +20,7 @@ define(function (require, exports, module) {
         this.icon = ko.observable(icon);
         this.color = ko.observable(color);
         this.title = ko.observable(title);
-        this.module = ko.observable(module);
-        this.showModule = function () {
-            console.log('show module: %s', this.module());
-        }
+        this.moduleId = ko.observable(module);
     };
 
     var MenuManager = Base.extend({
@@ -47,6 +47,20 @@ define(function (require, exports, module) {
             this.activeItem('home');
         },
 
+        showModule: function (data) {
+            console.log('show module: %s', data.moduleId());
+            that.activeItem(data.moduleId());
+            mainManager.loadModule(data.moduleId());
+
+            // 切换回主界面
+            // 清理动画残留
+            $('#mainPageContainer').css('left', 290);
+            $('#mainPageContainer').removeClass('main-page-slide-out');
+            $('#mainPageContainer').removeClass('main-page-slide-in');
+            // 加载动画
+            $('#mainPageContainer').addClass('main-page-slide-in');
+        },
+
         /**
          * 每个模块激活函数
          */
@@ -68,5 +82,6 @@ define(function (require, exports, module) {
     });
 
     // 只要一个MenuManager实例
-    return new MenuManager();
+    that = new MenuManager();
+    return that;
 });

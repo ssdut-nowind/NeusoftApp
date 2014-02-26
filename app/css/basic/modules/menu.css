@@ -6,8 +6,8 @@
 .menu-item {
     border-top: 1px solid #4A4A4C;
     border-bottom: 1px solid #151517;
-    padding: 20px;
-    height: 75px;
+    padding: 10px 20px;
+    height: 55px;
 }
 
 .menu-item:active, .menu-item-active {
@@ -63,4 +63,5 @@
     padding: 2px;
     color: #B8B8B8;
     text-align: center;
+    margin-right: 75px;
 }

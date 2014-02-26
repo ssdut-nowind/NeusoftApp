@@ -54,9 +54,9 @@ html, body {
 }
 
 .main-header-left {
-    width: 45px;
+    width: 46px;
     height: 45px;
-    border-right: 1px solid #C65252;
+    border-right: 1px solid #FF9B97;
     float: left;
 }
 
@@ -65,9 +65,9 @@ html, body {
 }
 
 .main-header-right {
-    width: 45px;
+    width: 46px;
     height: 45px;
-    border-left: 1px solid #FF9B97;
+    border-left: 1px solid #C65252;
     float: right;
 }
 
@@ -81,8 +81,10 @@ html, body {
     left: 45px;
     right: 45px;
     top: 0;
-    border-left: 1px solid #FF9B97;
-    border-right: 1px solid #C65252;
+    font-size: 18px;
+    line-height: 45px;
+    color: #fff;
+    text-align: center;
 }
 
 .main-header-icon {
@@ -95,6 +97,14 @@ html, body {
     color: #fff;
 }
 
+.main-page-header .main-header-icon:first-child{
+    border-right:1px solid #C65252;
+}
+
+.main-page-header .main-header-icon:last-child{
+    border-left: 1px solid #FF9B97;
+}
+
 .main-page-body {
     position: absolute;
     top: 45px;
@@ -105,50 +115,49 @@ html, body {
     z-index: 1;
 }
 
-.main-page-slide-show {
-    -webkit-transform-origin: 100% 100%;
-    -webkit-animation: sidebarLeftShow 0.5s 0s ease both;
-    animation: sidebarLeftShow 0.5s 0s ease both;
+/* 菜单动画 */
+.main-page-slide-out {
+    -webkit-animation: mainPageSlideOut 0.3s 0s linear both;
+    animation: mainPageSlideOut 0.3s 0s linear both;
 }
 
-.main-page-slide-hide {
-    -webkit-transform-origin: 100% 100%;
-    -webkit-animation: sidebarLeftHide 0.5s 0s ease both;
-    animation: sidebarLeftHide 0.5s 0s ease both;
-}
-
-@-webkit-keyframes sidebarLeftShow {
+@-webkit-keyframes mainPageSlideOut {
     0% {
-        -webkit-transform: translateX(0px);
+        -webkit-transform: translateX(0)
     }
     100% {
-        -webkit-transform: translateX(80%);
+        -webkit-transform: translateX(290px)
     }
 }
 
-@keyframes sidebarLeftShow {
+@keyframes mainPageSlideOut {
     0% {
-        transform: translateX(0px);
+        transform: translateX(0)
     }
     100% {
-        transform: translateX(80%);
+        transform: translateX(290px)
     }
 }
 
-@-webkit-keyframes sidebarLeftHide {
+.main-page-slide-in {
+    -webkit-animation: mainPageSlideIn 0.3s 0s linear both;
+    animation: mainPageSlideIn 0.3s 0s linear both;
+}
+
+@-webkit-keyframes mainPageSlideIn {
     0% {
-        -webkit-transform: translateX(80%);
+        -webkit-transform: translateX(0)
     }
     100% {
-        -webkit-transform: translateX(0px);
+        -webkit-transform: translateX(-290px)
     }
 }
 
-@keyframes sidebarLeftHide {
+@keyframes mainPageSlideIn {
     0% {
-        transform: translateX(80%);
+        transform: translateX(0)
     }
     100% {
-        transform: translateX(0px);
+        transform: translateX(-290px)
     }
 }

@@ -9,7 +9,7 @@ define(function (require, exports, module) {
 
     pack = {
         load: function (name, req, load, config) {
-            req(["text!../templates/" + name + '.tpl'], function (value) {
+            req(["text!./templates/" + name + '.tpl'], function (value) {
                 load(value);
             });
         }

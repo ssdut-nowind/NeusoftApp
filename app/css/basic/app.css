@@ -9,3 +9,7 @@
 @import url("modules/main.css");
 /* 菜单 */
 @import url("modules/menu.css");
+
+/* 每个模块 */
+@import url("modules/about.css");
+@import url("modules/setting.css");

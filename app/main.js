@@ -4,7 +4,7 @@
 requirejs.config({
     baseUrl: 'app/modules',
     paths: {
-        // JS库，替代jquery（http://www.zeptojs.com/）
+        // JS库，替代jquery（本处使用1.1.2 with full modules）（http://www.zeptojs.com/）
         'zepto': '../libs/zepto',
         // requirejs文本插件（http://www.requirejs.org/）
         'text': '../libs/text',
@@ -19,7 +19,9 @@ requirejs.config({
         // MVVM组件（http://knockoutjs.com/）
         'knockout': '../libs/knockout',
         // 继承组件（http://ejohn.org/blog/simple-javascript-inheritance/）
-        'extend': '../libs/extend'
+        'extend': '../libs/extend',
+        // 快速点击组件
+        'fastclick': '../libs/fastclick'
     },
     shim: {
         // zepto非AMD规范
