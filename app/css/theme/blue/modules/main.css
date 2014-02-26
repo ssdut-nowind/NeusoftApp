@@ -1,0 +1,27 @@
+.main-page-header {
+    background-color: #4B8DF8;
+}
+
+.main-header-left {
+    border-right: 1px solid #BFD1EF;
+}
+
+.main-header-left:active {
+    background-color: #3079ED;
+}
+
+.main-header-right {
+    border-left: 1px solid #3079ED;
+}
+
+.main-header-right:active {
+    background-color: #3079ED;
+}
+
+.main-page-header .main-header-icon:first-child{
+    border-right:1px solid #3079ED;
+}
+
+.main-page-header .main-header-icon:last-child{
+    border-left: 1px solid #BFD1EF;
+}

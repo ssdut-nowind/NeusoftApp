@@ -18,6 +18,19 @@ define(function (require, exports, module) {
          */
         initialize: function (data) {
 
+            /**
+             * 主题选项修改
+             */
+            this.viewContainer.find('input[name="theme"]').bind('change', this, function (event) {
+                var newTheme = $(event.srcElement).val();
+                console.log('Change theme to: ' + newTheme);
+                // 清除原有主题
+                $('head').find('link[data-theme]').remove();
+                $('head').append('<link rel="stylesheet" type="text/css" href="app/css/theme/' + newTheme
+                        + '/theme.css" data-theme="' + newTheme + '"/>');
+
+
+            });
         },
 
         /**
@@ -33,7 +46,10 @@ define(function (require, exports, module) {
 
         getBodyTemplate: function () {
             return tpl;
-        }
+        },
+
+        // 主题设置
+        theme: ko.observable('default')
     });
 
     return Setting;

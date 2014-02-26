@@ -24,6 +24,7 @@ define(function (require, exports, module) {
 
             $('#mainPageContainer').append(parentTpl);
             var moduleView = $('#mainPageContainer').find('.main-page-border[data-module="' + this.module + '"]');
+            this.viewContainer = moduleView;
 
             // 加载页面Body模板
             if(typeof(this.getBodyTemplate) == 'function'){
@@ -39,6 +40,8 @@ define(function (require, exports, module) {
 
         // 默认标题
         title: ko.observable('主窗口标题'),
+        // 模块容器（zepto对象）
+        viewContainer: null,
 
         /**
          * 显示侧滑菜单
