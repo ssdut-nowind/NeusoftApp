@@ -13,8 +13,8 @@ define(function (require, exports, module) {
         /**
          * 每个模块初始化函数
          */
-        initialize: function () {
-
+        initialize: function (data) {
+            console.log(data);
         },
 
         // 管理的所有窗口

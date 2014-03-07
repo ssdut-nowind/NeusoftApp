@@ -15,7 +15,6 @@ define(function (require, exports, module) {
          * @param data
          */
         initialize: function (data) {
-
         }
     });
 

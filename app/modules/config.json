@@ -27,7 +27,14 @@
             "barManager":{}
         },
         {
-            "menuManager":{}
+            "menuManager":{
+                "viewContainer":[
+                    {
+                        "view":"menu",
+                        "viewModel":"menuViewModel"
+                    }
+                ]
+            }
         }
     ]
 

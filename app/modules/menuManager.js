@@ -30,21 +30,24 @@ define(function (require, exports, module) {
         /**
          * 每个模块初始化函数
          */
-        initialize: function () {
+        initialize: function (data) {
+            console.log(data);
+            if(!data.viewContainer[0])return;
             // 加载菜单模板
-            var tpl = require('tpl!menu');
-            $('#menuContainer').html(tpl);
+            var self = this;
+            requirejs(['tpl!'+data.viewContainer[0].view],function(tpl){
+                $('#menuContainer').html(tpl);
+                // 绑定knockout
+                ko.applyBindings(self, $('#menuContainer')[0]);
 
-            // 绑定knockout
-            ko.applyBindings(this, $('#menuContainer')[0]);
+                // 定义菜单
+                self.menuItems.push(new MenuItem('fa-home', '#3895E2', '回到首页', 'home'));
+                self.menuItems.push(new MenuItem('fa-user', '#4D8732', '个人中心', 'center'));
+                self.menuItems.push(new MenuItem('fa-gear', '#F37F58', '设置', 'setting'));
+                self.menuItems.push(new MenuItem('fa-info', '#7186E3', '关于', 'about'));
 
-            // 定义菜单
-            this.menuItems.push(new MenuItem('fa-home', '#3895E2', '回到首页', 'home'));
-            this.menuItems.push(new MenuItem('fa-user', '#4D8732', '个人中心', 'center'));
-            this.menuItems.push(new MenuItem('fa-gear', '#F37F58', '设置', 'setting'));
-            this.menuItems.push(new MenuItem('fa-info', '#7186E3', '关于', 'about'));
-
-            this.activeItem('home');
+                self.activeItem('home');
+            });
         },
 
         showModule: function (data) {

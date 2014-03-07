@@ -17,7 +17,6 @@ define(function (require, exports, module) {
          * @param data
          */
         initialize: function (data) {
-
             /**
              * 主题选项修改
              */

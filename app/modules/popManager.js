@@ -7,7 +7,14 @@ define(function(require, exports, module) {
 
     var PopManager = Base.extend({
         // 每个模块带个模块ID
-        module: 'popManager'
+        module: 'popManager',
+        /**
+         * 每个模块初始化函数
+         */
+        initialize: function (data) {
+            console.log(data);
+        }
+
     });
 
     // 只要一个PopManager实例
