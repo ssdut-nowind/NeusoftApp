@@ -1,0 +1,34 @@
+{
+    "name": "config json",
+    "version": "0.0.1",
+    "managerContainer":[
+        {
+            "mainManager":{
+                "viewContainer":[
+                    {
+                        "view":"tpl1",
+                        "viewModel":"viewModel1"
+                    },
+                    {
+                        "view":"tpl2",
+                        "viewModel":"viewModel2"
+                    },
+                    {
+                        "view":"tpl3",
+                        "viewModel":"viewModel3"
+                    }
+                ]
+            }
+        },
+        {
+            "popManager":{}
+        },
+        {
+            "barManager":{}
+        },
+        {
+            "menuManager":{}
+        }
+    ]
+
+}

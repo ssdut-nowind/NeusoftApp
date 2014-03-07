@@ -6,15 +6,24 @@ define(function (require, exports, module) {
     var fastclick = require('fastclick');
 
     var mainUI = function () {
+        //initial config
+        var Config = require("text!config.json");
+        console.log(Config);
         // 菜单模块
         var menuManager = require('menuManager');
-        if (typeof(menuManager.initialize) == 'function') menuManager.initialize();
+        if (typeof(menuManager.initialize) == 'function') {
+            menuManager.initialize();
+        }
         // 主界面模块
         var mainManager = require('mainManager');
-        if (typeof(mainManager.initialize) == 'function') mainManager.initialize();
+        if (typeof(mainManager.initialize) == 'function'){
+            mainManager.initialize();
+        }
         // 弹出窗口模块
         var popManager = require('popManager');
-        if (typeof(popManager.initialize) == 'function') popManager.initialize();
+        if (typeof(popManager.initialize) == 'function') {
+            popManager.initialize();
+        }
 
         // 加载home页
         mainManager.loadModule('home');
