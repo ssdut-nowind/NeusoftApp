@@ -35,18 +35,11 @@ define(function (require, exports, module) {
             if(!data.viewContainer[0])return;
             // 加载菜单模板
             var self = this;
-            requirejs(['tpl!'+data.viewContainer[0].view],function(tpl){
+            requirejs(['tpl!'+data.viewContainer[0].view,'vm!'+data.viewContainer[0].viewModel],function(tpl,vm){
                 $('#menuContainer').html(tpl);
                 // 绑定knockout
-                ko.applyBindings(self, $('#menuContainer')[0]);
-
-                // 定义菜单
-                self.menuItems.push(new MenuItem('fa-home', '#3895E2', '回到首页', 'home'));
-                self.menuItems.push(new MenuItem('fa-user', '#4D8732', '个人中心', 'center'));
-                self.menuItems.push(new MenuItem('fa-gear', '#F37F58', '设置', 'setting'));
-                self.menuItems.push(new MenuItem('fa-info', '#7186E3', '关于', 'about'));
-
-                self.activeItem('home');
+                ko.applyBindings(vm, $('#menuContainer')[0]);
+                vm.initialize();
             });
         },
 

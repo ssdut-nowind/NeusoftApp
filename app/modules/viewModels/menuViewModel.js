@@ -4,6 +4,8 @@
 define(function (require, exports, module) {
         "use strict";
 // 获取相关依赖
+        var Base = require('base');
+        var ko = require('knockout');
         /**
          * 定义菜单项
          * @param icon
@@ -22,7 +24,7 @@ define(function (require, exports, module) {
             /**
              * 每个模块初始化函数
              */
-            initialize: function (data) {
+            initialize: function () {
                 // 定义菜单
                 this.menuItems.push(new MenuItem('fa-home', '#3895E2', '回到首页', 'home'));
                 this.menuItems.push(new MenuItem('fa-user', '#4D8732', '个人中心', 'center'));
@@ -55,6 +57,6 @@ define(function (require, exports, module) {
 
         // 只要一个MenuManager实例
 
-        return new MenuManager();
+        return new menuViewModel();
     }
 );

@@ -8,6 +8,8 @@ requirejs.config({
         'zepto': '../libs/zepto',
         // requirejs文本插件（http://www.requirejs.org/）
         'text': '../libs/text',
+        // requirejs文本插件（http://www.requirejs.org/）
+        'vm': '../libs/vm',
         // requirejs模板插件
         'tpl': '../libs/tpl',
         // 手势触摸组件（http://eightmedia.github.io/hammer.js/）
