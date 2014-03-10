@@ -3,9 +3,9 @@ define(function(require, exports, module) {
     // 获取相关依赖
 
     var util = require('util');
-    var Base = require('base');
+    var managerBase = require('base/managerBase');
 
-    var PopManager = Base.extend({
+    var PopManager = managerBase.extend({
         // 每个模块带个模块ID
         module: 'popManager',
         /**

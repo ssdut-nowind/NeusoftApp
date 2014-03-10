@@ -16,7 +16,7 @@ define(function (require, exports, module) {
          * 菜单模块
          * @type {Object}
          */
-        var menuManager = require('menuManager');
+        var menuManager = require('managers/menuManager');
         if (typeof(menuManager.initialize) == 'function') {
             menuManager.initialize(Config.managerContainer[3].menuManager);
         }
@@ -24,7 +24,7 @@ define(function (require, exports, module) {
          * 主界面模块
          * @type {Object}
          */
-        var mainManager = require('mainManager');
+        var mainManager = require('managers/mainManager');
         if (typeof(mainManager.initialize) == 'function'){
             mainManager.initialize(Config.managerContainer[0].mainManager);
         }
@@ -32,7 +32,7 @@ define(function (require, exports, module) {
          * 弹出窗口模块
          * @type {Object}
          */
-        var popManager = require('popManager');
+        var popManager = require('managers/popManager');
         if (typeof(popManager.initialize) == 'function') {
             popManager.initialize(Config.managerContainer[1].popManager);
         }

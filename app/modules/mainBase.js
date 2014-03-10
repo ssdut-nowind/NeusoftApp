@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
 
-    var Base = require('base');
+    var Base = require('./base/base');
     var util = require('util');
     var ko = require('knockout');
     var $ = require('zepto');

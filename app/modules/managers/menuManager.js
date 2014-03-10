@@ -5,25 +5,12 @@ define(function (require, exports, module) {
     var util = require('util');
     var $ = require('zepto');
     var ko = require('knockout');
-    var Base = require('base');
-    var mainManager = require('mainManager');
+    var managerBase = require('base/managerBase');
+    var mainManager = require('managers/mainManager');
     // MenuManager对象实例
     var that = null;
 
-    /**
-     * 定义菜单项
-     * @param icon
-     * @param title
-     * @param module
-     */
-    var MenuItem = function (icon, color, title, module) {
-        this.icon = ko.observable(icon);
-        this.color = ko.observable(color);
-        this.title = ko.observable(title);
-        this.moduleId = ko.observable(module);
-    };
-
-    var MenuManager = Base.extend({
+    var MenuManager = managerBase.extend({
         // 每个模块带个模块ID
         module: 'menuManager',
 
@@ -40,6 +27,7 @@ define(function (require, exports, module) {
                 // 绑定knockout
                 ko.applyBindings(vm, $('#menuContainer')[0]);
                 vm.initialize();
+                vm.active();
             });
         },
 
@@ -55,26 +43,7 @@ define(function (require, exports, module) {
             $('#mainPageContainer').removeClass('main-page-slide-in');
             // 加载动画
             $('#mainPageContainer').addClass('main-page-slide-in');
-        },
-
-        /**
-         * 每个模块激活函数
-         */
-        active: function () {
-
-        },
-
-        /**
-         * 每个模块销毁函数
-         */
-        destroy: function () {
-
-        },
-
-        // 绑定的菜单项
-        menuItems: ko.observableArray([]),
-
-        activeItem: ko.observable('')
+        }
     });
 
     // 只要一个MenuManager实例

@@ -38,6 +38,6 @@ requirejs.config({
     }
 });
 
-requirejs(['mainUI'], function (App) {
+requirejs(['mainApp'], function (App) {
     return new App();
 });

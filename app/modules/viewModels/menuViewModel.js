@@ -4,7 +4,7 @@
 define(function (require, exports, module) {
         "use strict";
 // 获取相关依赖
-        var Base = require('base');
+        var pageBase = require('base/pageBase');
         var ko = require('knockout');
         /**
          * 定义菜单项
@@ -19,7 +19,7 @@ define(function (require, exports, module) {
             this.moduleId = ko.observable(module);
         };
 
-        var menuViewModel = Base.extend({
+        var menuViewModel = pageBase.extend({
 
             /**
              * 每个模块初始化函数
