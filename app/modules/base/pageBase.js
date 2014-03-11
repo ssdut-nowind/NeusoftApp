@@ -17,7 +17,15 @@ define(function (require, exports, module) {
             if(prop.module == 'base'){
                 throw Error('[Neusoft App] 未定义模块ID。');
             }
-        }
+        },
+
+        initialize:function(){},
+        //render:function(){},
+        active:function(){},
+        deactive:function(){},
+        destroy:function(){},
+        events:{}
+
     });
 
     return pageBase;

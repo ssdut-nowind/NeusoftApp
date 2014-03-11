@@ -49,6 +49,14 @@ define(function (require, exports, module) {
 
             },
 
+            events:{
+                'abc':'abc'
+            },
+
+            abc:function(){
+                alert("abc");
+            },
+
             // 绑定的菜单项
             menuItems: ko.observableArray([]),
 

@@ -1,12 +1,10 @@
 define(function (require, exports, module) {
     "use strict";
     // 获取相关依赖
-
-    var util = require('util');
     var $ = require('zepto');
     var ko = require('knockout');
     var managerBase = require('base/managerBase');
-    var mainManager = require('managers/mainManager');
+
     // MenuManager对象实例
     var that = null;
 
@@ -29,20 +27,6 @@ define(function (require, exports, module) {
                 vm.initialize();
                 vm.active();
             });
-        },
-
-        showModule: function (data) {
-            console.log('show module: %s', data.moduleId());
-            that.activeItem(data.moduleId());
-            mainManager.loadModule(data.moduleId());
-
-            // 切换回主界面
-            // 清理动画残留
-            $('#mainPageContainer').css('left', 290);
-            $('#mainPageContainer').removeClass('main-page-slide-out');
-            $('#mainPageContainer').removeClass('main-page-slide-in');
-            // 加载动画
-            $('#mainPageContainer').addClass('main-page-slide-in');
         }
     });
 

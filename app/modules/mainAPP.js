@@ -5,7 +5,7 @@ define(function (require, exports, module) {
     var util = require('util');
     var fastclick = require('fastclick');
 
-    var mainUI = function () {
+    var mainApp = function () {
         /**
          * 系统配置参数.
          * @type {String}
@@ -44,5 +44,5 @@ define(function (require, exports, module) {
         fastclick.attach(document.body);
     };
 
-    return mainUI;
+    return mainApp;
 });

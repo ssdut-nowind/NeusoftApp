@@ -2,6 +2,8 @@ define(function (require, exports, module) {
     "use strict";
 
     var Class = require('extend');
+    var _ = require('underscore');
+    var Backbone = require('backbone');
 
     /**
      * 所有Model的父类
@@ -16,6 +18,9 @@ define(function (require, exports, module) {
             }
         }
     });
+
+    _.extend(Base,Backbone.Events);
+
 
     return Base;
 });
