@@ -45,7 +45,7 @@ html, body {
 .main-page-header {
     width: 100%;
     height: 45px;
-    background-color: #ED7574;
+    background-color: #5e92b5;
     position: absolute;
     left: 0;
     top: 0;
@@ -56,23 +56,20 @@ html, body {
 .main-header-left {
     width: 46px;
     height: 45px;
-    border-right: 1px solid #FF9B97;
+    background: #5389ae;
+    border-right: 1px solid #5389ae;
     float: left;
 }
 
 .main-header-left:active {
-    background-color: #C55151;
+    background-color: #537fae;
 }
 
 .main-header-right {
     width: 46px;
     height: 45px;
-    border-left: 1px solid #C65252;
+    border-left: 1px solid #5389ae;
     float: right;
-}
-
-.main-header-right:active {
-    background-color: #C55151;
 }
 
 .main-header-title {
@@ -98,11 +95,11 @@ html, body {
 }
 
 .main-page-header .main-header-icon:first-child{
-    border-right:1px solid #C65252;
+    border-right:1px solid #5389ae;
 }
 
 .main-page-header .main-header-icon:last-child{
-    border-left: 1px solid #FF9B97;
+    border-left: 1px solid #5389ae;
 }
 
 .main-page-body {

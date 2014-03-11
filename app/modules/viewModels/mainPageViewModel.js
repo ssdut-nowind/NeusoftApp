@@ -3,7 +3,7 @@ define(function (require, exports, module) {
     var util = require('util');
     var ko = require('knockout');
     var MainBase = require('base/mainBase');
-    var tpl = require('tpl!mainPage')
+    var tpl = require('tpl!mainPage');
 
     var Home = MainBase.extend({
         // 每个模块带个模块ID
@@ -13,7 +13,7 @@ define(function (require, exports, module) {
         getBodyTemplate: function () {
             return tpl;
         },
-        click:function(){
+        payClick:function(){
             util.mainManager.loadModule('mainPageTwoViewModel');
         }
     });

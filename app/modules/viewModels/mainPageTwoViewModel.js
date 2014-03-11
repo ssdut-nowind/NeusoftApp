@@ -12,7 +12,10 @@ define(function (require, exports, module) {
         // 每个模块带个模块ID
         module: 'mainPageTwoViewModel',
         // 默认标题
-        title: ko.observable('银联手机支付')
+        title: ko.observable('银联手机支付'),
+        getBodyTemplate: function () {
+            return tpl;
+        }
     });
 
     return Home;

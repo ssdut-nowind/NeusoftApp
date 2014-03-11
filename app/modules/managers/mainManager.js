@@ -18,15 +18,7 @@ define(function (require, exports, module) {
             console.log(data);
             if(!data.viewContainer[0])return;
             // 加载菜单模板
-            var self = this;
-            requirejs(['tpl!'+data.viewContainer[0].view,'vm!'+data.viewContainer[0].viewModel],function(tpl,vm){
-                //$('#mainPageContainer').html(tpl);
-                // 绑定knockout
-                var vm1 = new vm();
-                ko.applyBindings(vm1, $('#mainPageContainer')[0]);
-                vm1.initialize();
-                vm1.active();
-            });
+            this.loadModule(data.viewContainer[0].viewModel);
         },
 
         // 管理的所有窗口
