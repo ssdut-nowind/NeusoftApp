@@ -1,12 +1,12 @@
 define(function (require, exports, module) {
 
-    var Base = require('./base/base');
+    var pageBase = require('base/pageBase');
     var util = require('util');
     var ko = require('knockout');
     var $ = require('zepto');
     var baseTpl = require('tpl!mainBase');
 
-    var MainBase = Base.extend({
+    var MainBase = pageBase.extend({
         // 每个模块带个模块ID
         module: 'mainBase',
         iScrolls: [],
@@ -14,7 +14,7 @@ define(function (require, exports, module) {
         /**
          * 构造函数
          */
-        init: function () {
+        initialize: function () {
             // 加载基础模板
             var parentTpl = baseTpl.replace(/{module}/g, this.module);
             // 如果定义了自定义模板函数，则调用该函数对模板进行自定义处理

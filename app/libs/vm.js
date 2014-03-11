@@ -7,7 +7,7 @@ define(function (require, exports, module) {
 
     pack = {
         load: function (name, req, load, config) {
-            req(["./viewModels/" + name ], function (value) {
+            req(["viewModels/" + name ], function (value) {
                 load(value);
             });
         }

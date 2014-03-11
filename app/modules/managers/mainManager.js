@@ -5,6 +5,7 @@ define(function (require, exports, module) {
     var util = require('util');
     var managerBase = require('base/managerBase');
     var $ = require('zepto');
+    var ko = require('knockout');
 
     var MainManager = managerBase.extend({
         // 每个模块带个模块ID
@@ -15,6 +16,17 @@ define(function (require, exports, module) {
          */
         initialize: function (data) {
             console.log(data);
+            if(!data.viewContainer[0])return;
+            // 加载菜单模板
+            var self = this;
+            requirejs(['tpl!'+data.viewContainer[0].view,'vm!'+data.viewContainer[0].viewModel],function(tpl,vm){
+                //$('#mainPageContainer').html(tpl);
+                // 绑定knockout
+                var vm1 = new vm();
+                ko.applyBindings(vm1, $('#mainPageContainer')[0]);
+                vm1.initialize();
+                vm1.active();
+            });
         },
 
         // 管理的所有窗口
@@ -37,7 +49,7 @@ define(function (require, exports, module) {
             } else {
                 // 模块不存在，则加载（每个模块一个目录，默认加载目录内main.js）
                 var that = this;
-                require([moduleId + '/main'], function (ModuleClass) {
+                require(['vm!'+moduleId], function (ModuleClass) {
                     var module = new ModuleClass();
                     if (module.module != moduleId) {
                         throw Error('[Neusoft App] 模块ID与加载ID不一致。');

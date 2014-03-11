@@ -5,6 +5,7 @@ define(function (require, exports, module) {
     "use strict";
 
     var base = require('./base');
+    var util = require('util');
 
     /**
      * 所有Model的父类
@@ -17,6 +18,9 @@ define(function (require, exports, module) {
             if(prop.module == 'base'){
                 throw Error('[Neusoft App] 未定义模块ID。');
             }
+        },
+        navigate:function(mvName){
+
         },
 
         initialize:function(){},

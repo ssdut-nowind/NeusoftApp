@@ -11,7 +11,7 @@ define(function (require, exports, module) {
          * @type {String}
          */
         var Config = JSON.parse(require("text!config.json"));
-        console.log(Config);
+        util.Config = Config;
         /**
          * 菜单模块
          * @type {Object}
@@ -26,6 +26,7 @@ define(function (require, exports, module) {
          */
         var mainManager = require('managers/mainManager');
         if (typeof(mainManager.initialize) == 'function'){
+            util.mainManager = mainManager;
             mainManager.initialize(Config.managerContainer[0].mainManager);
         }
         /**
@@ -38,7 +39,7 @@ define(function (require, exports, module) {
         }
 
         // 加载home页
-        mainManager.loadModule('home');
+        //mainManager.loadModule('home');
 
         // 初始化fastclick
         fastclick.attach(document.body);

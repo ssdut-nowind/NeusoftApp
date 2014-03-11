@@ -6,16 +6,16 @@
             "mainManager":{
                 "viewContainer":[
                     {
-                        "view":"tpl1",
-                        "viewModel":"viewModel1"
+                        "view":"mainPage",
+                        "viewModel":"mainPageViewModel"
                     },
                     {
-                        "view":"tpl2",
-                        "viewModel":"viewModel2"
+                        "view":"mainPageTwo",
+                        "viewModel":"mainPageTwoViewModel"
                     },
                     {
-                        "view":"tpl3",
-                        "viewModel":"viewModel3"
+                        "view":"mainPage",
+                        "viewModel":"mainPageThreeViewModel"
                     }
                 ]
             }
